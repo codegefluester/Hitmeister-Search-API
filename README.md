@@ -29,7 +29,14 @@ Import `HitmeisterAPI.h` and subscribe to the HMProductFound notification that i
     [super viewDidLoad];
 	
 	// Add notification observer
+	// Product found
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productFound:) name:@"HMProductFound" object:nil];
+	
+	// No product found
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noProductFound:) name:@"HMNoProductFound" object:nil];
+	
+	// Search request failed 
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchFailed:) name:@"HMRequestFailed" object:nil];
 	
 	// Lookup a product by its EAN code
 	[HitmeisterAPI lookupPriceByEAN:@"9783551577771"];
@@ -45,6 +52,14 @@ Import `HitmeisterAPI.h` and subscribe to the HMProductFound notification that i
 	Product *product = [[notification userInfo] objectForKey:@"product"];
 	
 	// ... do something with the product data...
+}
+
+- (void) noProductFound:(NSNotification*)notification {
+	NSLog(@"No product found");
+}
+
+- (void) searchFailed:(NSNotification*)notification {
+	NSLog(@"The search failed. The error was: %@", [[notification objectForKey:@"error"] description]);
 }
 
 @end
