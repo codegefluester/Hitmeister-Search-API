@@ -1,7 +1,7 @@
 Hitmeister Search API for iOS/Mac OS X
 =====================
 
-This is an implementation of the Hitmeister Search API in Objective-C to use with your iOS/Mac App.
+This is an implementation of the [Hitmeister Search API](http://www.hitmeister.de/affiliate/schnittstelle/) in Objective-C to use with your iOS/Mac App.
 It let's you search for products in the Hitmeister Database by either ISBN/EAN or ASIN code.
 
 Setup
