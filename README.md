@@ -73,4 +73,4 @@ Tell me about the issue [here](https://github.com/codegefluester/Hitmeister-Sear
 Thanks to...
 =====================
 - The creators of ASIHTTPRequest for offering such an easy to use class!
-- Matt Gallagher for the nixe XPathQuery class! (http://cocoawithlove.com/2008/10/using-libxml2-for-parsing-and-xpath.html)
+- Matt Gallagher for the nice XPathQuery class! (http://cocoawithlove.com/2008/10/using-libxml2-for-parsing-and-xpath.html)
