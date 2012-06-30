@@ -13,6 +13,7 @@ Setup
 	- MobileCoreServices.framework
 	- CoreGraphics.framework
 	- zlib.dylib
+	- libxml2.dylib
 	
 Usage
 =====================
