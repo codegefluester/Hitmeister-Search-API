@@ -16,3 +16,18 @@ Setup
 	
 Usage
 =====================
+Add the following line to your `viewDidLoad:` method to subscribe to the HMProductFound
+notification that is sent by the API class when a search returned a product
+
+```objective-
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	
+	// Add notification observer
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productFound:) name:@"HMProductFound" object:nil];
+	
+	// Lookup a product by its EAN code
+	[HitmeisterAPI lookupPriceByEAN:@"9783551577771"];
+}
+```
