@@ -25,7 +25,7 @@
 		NSData *response = [weakRequest responseData];
 		NSArray *productInfo = PerformXMLXPathQuery(response, @"/hitmeister/result/field");
 		if([productInfo count] == 0) {
-			NSLog(@"No products found...");
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"HMNoProductFound" object:nil userInfo:nil];
 		} else {
 			Product *product = [[Product alloc] init];
 			for (NSDictionary *attribute in productInfo) {
