@@ -32,6 +32,12 @@ Import `HitmeisterAPI.h` and subscribe to the HMProductFound notification that i
 	
 	// Lookup a product by its EAN code
 	[HitmeisterAPI lookupPriceByEAN:@"9783551577771"];
+	
+	// Lookup a product by ISBN
+	// [HitmeisterAPI lookupPriceByISBN:@"9783551577771"];
+	
+	// Lookup product by ASIN code
+	// [HitmeisterAPI lookupPriceByASIN:@"9783551577771"];
 }
 
 - (void) productFound:(NSNotification*)notification {
@@ -42,3 +48,15 @@ Import `HitmeisterAPI.h` and subscribe to the HMProductFound notification that i
 
 @end
 ```
+
+What data will be returned
+=====================
+The Hitmeister API returns the following data for a product:
+- Title/Name
+- EAN Code
+- URL to the product
+- Affiliate/Partner-URL
+- Cheapest price (new and used)
+- Shipping costs (new and used)
+- Savings compared to the listprice of the product
+- Commission category
