@@ -40,4 +40,6 @@
 
 @property (nonatomic, strong) NSString *commission_category;
 
+- (NSString*) getCheapestPriceFormatted;
+
 @end

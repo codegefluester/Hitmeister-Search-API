@@ -37,9 +37,9 @@
 				@catch (NSException *exception) {
 					NSLog(@"Catched exception %@", exception);
 				}
-				
-				[[NSNotificationCenter defaultCenter] postNotificationName:@"HMProductFound" object:nil userInfo:[NSDictionary dictionaryWithObject:product forKey:@"product"]];
 			}
+			
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"HMProductFound" object:nil userInfo:[NSDictionary dictionaryWithObject:product forKey:@"product"]];
 		}
 		weakRequest = nil;
 	}];

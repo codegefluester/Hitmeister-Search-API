@@ -23,4 +23,12 @@
 @synthesize listprice_savings;
 @synthesize commission_category;
 
+- (NSString*) getCheapestPriceFormatted 
+{
+	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+	[formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"]];
+	return [formatter stringFromNumber:[NSNumber numberWithInt:self.cheapest_price]];
+}
+
 @end
