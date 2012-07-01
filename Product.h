@@ -41,5 +41,9 @@
 @property (nonatomic, strong) NSString *commission_category;
 
 - (NSString*) getCheapestPriceFormatted;
+- (NSString*) getCheapestNewPriceFormatted;
+- (NSString*) getCheapestUsedPriceFormatted;
+- (NSString*) getShippingCostUsedFormatted;
+- (NSString*) getShippingCostNewFormatted;
 
 @end

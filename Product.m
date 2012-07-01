@@ -8,6 +8,10 @@
 
 #import "Product.h"
 
+@interface Product()
+	- (NSString*) formatPrice:(int)price;
+@end
+
 @implementation Product
 
 @synthesize item_title;
@@ -25,10 +29,35 @@
 
 - (NSString*) getCheapestPriceFormatted 
 {
+	return [self formatPrice:self.cheapest_price];
+}
+
+- (NSString*) getCheapestNewPriceFormatted 
+{
+	return [self formatPrice:self.cheapest_new_price];
+}
+
+- (NSString*) getCheapestUsedPriceFormatted 
+{
+	return [self formatPrice:self.cheapest_used_price];
+}
+
+- (NSString*) getShippingCostUsedFormatted 
+{
+	return [self formatPrice:self.shipping_cost_used];
+}
+
+- (NSString*) getShippingCostNewFormatted 
+{
+	return [self formatPrice:self.shipping_cost_new];
+}
+
+- (NSString*) formatPrice:(int)price 
+{
 	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 	[formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"]];
-	return [formatter stringFromNumber:[NSNumber numberWithInt:self.cheapest_price]];
+	return [formatter stringFromNumber:[NSNumber numberWithInt:(price/100)]];
 }
 
 @end
