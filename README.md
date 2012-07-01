@@ -52,6 +52,8 @@ Import `HitmeisterAPI.h` and subscribe to the HMProductFound notification that i
 	Product *product = [[notification userInfo] objectForKey:@"product"];
 	
 	// ... do something with the product data...
+	NSLog(@"Product name: %@", [product item_title]);
+	NSLog(@"Cheapest price: %@", [product getCheapestPriceFormatted]);
 }
 
 - (void) noProductFound:(NSNotification*)notification {
