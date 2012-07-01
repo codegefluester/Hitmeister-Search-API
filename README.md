@@ -61,7 +61,7 @@ Import `HitmeisterAPI.h` and subscribe to the HMProductFound notification that i
 }
 
 - (void) searchFailed:(NSNotification*)notification {
-	NSLog(@"The search failed. The error was: %@", [[notification objectForKey:@"error"] description]);
+	NSLog(@"The search failed. The error was: %@", [[[notification userInfo] objectForKey:@"error"] description]);
 }
 
 @end
